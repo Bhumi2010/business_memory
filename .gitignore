@@ -1,0 +1,51 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+
+# Data
+data/raw/*
+data/processed/*
+
+# Python
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+
+# Data
+data/raw/*
+data/processed/*
+
+# Python
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
