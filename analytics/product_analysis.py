@@ -1,83 +1,24 @@
 import pandas as pd
-from pathlib import Path
+
+from data_loader import load_enriched_transactions
 
 
 # -----------------------------
-# Paths
+# Load prepared transaction data
 # -----------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-RAW_DATA = BASE_DIR / "data" / "raw"
-
-SALES_FILE = RAW_DATA / "sales.csv"
-SALE_ITEMS_FILE = RAW_DATA / "sale_items.csv"
-PRODUCTS_FILE = RAW_DATA / "products.csv"
-
-
-# -----------------------------
-# Load data
-# -----------------------------
-
-sales = pd.read_csv(SALES_FILE)
-sale_items = pd.read_csv(SALE_ITEMS_FILE)
-products = pd.read_csv(PRODUCTS_FILE)
-
-
-# -----------------------------
-# Prepare dates
-# -----------------------------
-
-sales["sale_date"] = pd.to_datetime(sales["sale_date"])
-
-
-# -----------------------------
-# Attach dates to sale items
-# -----------------------------
-
-sale_items = sale_items.merge(
-    sales[["sale_id", "sale_date"]],
-    on="sale_id",
-    how="left"
-)
-
-
-# -----------------------------
-# Attach product information
-# -----------------------------
-
-sale_items = sale_items.merge(
-    products[
-        [
-            "product_id",
-            "product_name",
-            "category"
-        ]
-    ],
-    on="product_id",
-    how="left"
-)
-
-
-# -----------------------------
-# Create month
-# -----------------------------
-
-sale_items["month"] = (
-    sale_items["sale_date"]
-    .dt.to_period("M")
-)
+transactions = load_enriched_transactions()
 
 
 # -----------------------------
 # Analyze Household
 # -----------------------------
 
-comparison = sale_items[
-    (sale_items["category"] == "Household")
+comparison = transactions[
+    (transactions["category"] == "Household")
     &
     (
-        sale_items["month"].isin(
+        transactions["month"].isin(
             [
                 pd.Period("2026-07"),
                 pd.Period("2026-08")

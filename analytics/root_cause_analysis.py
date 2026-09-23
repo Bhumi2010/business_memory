@@ -1,53 +1,14 @@
 import pandas as pd
-from pathlib import Path
+
+from data_loader import load_sales, load_transaction_data
 
 
 # -----------------------------
-# Paths
+# Load prepared data
 # -----------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-RAW_DATA = BASE_DIR / "data" / "raw"
-
-SALES_FILE = RAW_DATA / "sales.csv"
-SALE_ITEMS_FILE = RAW_DATA / "sale_items.csv"
-
-
-# -----------------------------
-# Load data
-# -----------------------------
-
-sales = pd.read_csv(SALES_FILE)
-sale_items = pd.read_csv(SALE_ITEMS_FILE)
-
-
-# -----------------------------
-# Prepare dates
-# -----------------------------
-
-sales["sale_date"] = pd.to_datetime(sales["sale_date"])
-
-
-# -----------------------------
-# Attach dates to sale items
-# -----------------------------
-
-sale_items = sale_items.merge(
-    sales[["sale_id", "sale_date"]],
-    on="sale_id",
-    how="left"
-)
-
-
-# -----------------------------
-# Create month
-# -----------------------------
-
-sale_items["month"] = (
-    sale_items["sale_date"]
-    .dt.to_period("M")
-)
+sales = load_sales()
+transactions = load_transaction_data()
 
 
 # -----------------------------
@@ -55,7 +16,7 @@ sale_items["month"] = (
 # -----------------------------
 
 monthly_revenue = (
-    sale_items
+    transactions
     .groupby("month")["line_total"]
     .sum()
 )
