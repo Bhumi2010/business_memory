@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Memory | Analytics Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                BM
+            </div>
+
+            <div>
+                <h2>Business Memory</h2>
+                <span>Analytics Platform</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#overview" class="nav-item active">
+                <span>◉</span>
+                Overview
+            </a>
+
+            <a href="#customers" class="nav-item">
+                <span>◎</span>
+                Customers
+            </a>
+
+            <a href="#products" class="nav-item">
+                <span>▣</span>
+                Products
+            </a>
+
+            <a href="#categories" class="nav-item">
+                <span>◫</span>
+                Categories
+            </a>
+
+            <a href="#insights" class="nav-item">
+                <span>✦</span>
+                Insights
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+            <span>Business Intelligence</span>
+            <small>v1.0</small>
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main class="main-content">
+
+        <!-- =====================================
+             HEADER
+             ===================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="eyebrow">
+                    BUSINESS INTELLIGENCE
+                </p>
+
+                <h1>
+                    Analytics Overview
+                </h1>
+
+                <p class="subtitle">
+                    Understand revenue, customers and product performance.
+                </p>
+
+            </div>
+
+
+            <div class="period">
+
+                <span>
+                    Analysis Period
+                </span>
+
+                <strong>
+                    July → August 2026
+                </strong>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             KPI CARDS
+             ===================================== -->
+
+        <section class="kpi-grid" id="overview">
+
+            <!-- TOTAL REVENUE -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-header">
+
+                    <span>
+                        Total Revenue
+                    </span>
+
+                    <span class="kpi-icon">
+                        ₹
+                    </span>
+
+                </div>
+
+                <h2 id="totalRevenue">
+                    Loading...
+                </h2>
+
+                <p class="kpi-description">
+                    Total business revenue
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL ORDERS -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-header">
+
+                    <span>
+                        Total Orders
+                    </span>
+
+                    <span class="kpi-icon">
+                        ↗
+                    </span>
+
+                </div>
+
+                <h2 id="totalOrders">
+                    Loading...
+                </h2>
+
+                <p class="kpi-description">
+                    Completed transactions
+                </p>
+
+            </div>
+
+
+            <!-- AVERAGE ORDER VALUE -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-header">
+
+                    <span>
+                        Average Order Value
+                    </span>
+
+                    <span class="kpi-icon">
+                        ◈
+                    </span>
+
+                </div>
+
+                <h2 id="averageOrderValue">
+                    Loading...
+                </h2>
+
+                <p class="kpi-description">
+                    Revenue per order
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL CUSTOMERS -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-header">
+
+                    <span>
+                        Total Customers
+                    </span>
+
+                    <span class="kpi-icon">
+                        ◎
+                    </span>
+
+                </div>
+
+                <h2 id="totalCustomers">
+                    Loading...
+                </h2>
+
+                <p class="kpi-description">
+                    Unique customers in dataset
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             REVENUE PERFORMANCE
+             ===================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        PERFORMANCE
+                    </p>
+
+                    <h2>
+                        Revenue Performance
+                    </h2>
+
+                </div>
+
+
+                <div id="revenueChange" class="change-badge">
+
+                    Loading...
+
+                </div>
+
+            </div>
+
+
+            <div class="revenue-grid">
+
+                <!-- REVENUE CHART -->
+
+                <div class="chart-card">
+
+                    <div class="chart-title">
+
+                        <span>
+                            Monthly Revenue
+                        </span>
+
+                        <span class="chart-period">
+                            July vs August
+                        </span>
+
+                    </div>
+
+
+                    <div class="revenue-bars">
+
+                        <!-- JULY -->
+
+                        <div class="bar-container">
+
+                            <span class="bar-value" id="julyRevenueValue">
+
+                                ₹0
+
+                            </span>
+
+
+                            <div class="bar july-bar" id="julyBar">
+                            </div>
+
+
+                            <span class="bar-label">
+                                July
+                            </span>
+
+                        </div>
+
+
+                        <!-- AUGUST -->
+
+                        <div class="bar-container">
+
+                            <span class="bar-value" id="augustRevenueValue">
+
+                                ₹0
+
+                            </span>
+
+
+                            <div class="bar august-bar" id="augustBar">
+                            </div>
+
+
+                            <span class="bar-label">
+                                August
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE CHANGE -->
+
+                <div class="metric-card">
+
+                    <p class="section-label">
+                        REVENUE CHANGE
+                    </p>
+
+
+                    <h3 id="revenueChangeAmount">
+                        Loading...
+                    </h3>
+
+
+                    <p id="revenueChangePercent">
+                        Loading...
+                    </p>
+
+
+                    <div class="metric-divider">
+                    </div>
+
+
+                    <div class="mini-stat">
+
+                        <span>
+                            July
+                        </span>
+
+                        <strong id="julyRevenue">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="mini-stat">
+
+                        <span>
+                            August
+                        </span>
+
+                        <strong id="augustRevenue">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CUSTOMER HEALTH
+             ===================================== -->
+
+        <section class="dashboard-section" id="customers">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        CUSTOMER ANALYTICS
+                    </p>
+
+                    <h2>
+                        Customer Health
+                    </h2>
+
+                </div>
+
+
+                <div class="retention-rate">
+
+                    <span>
+                        Retention
+                    </span>
+
+                    <strong id="retentionRate">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="customer-grid">
+
+                <!-- RETAINED -->
+
+                <div class="customer-card retained">
+
+                    <span class="customer-label">
+                        Retained
+                    </span>
+
+                    <strong id="retainedCustomers">
+                        0
+                    </strong>
+
+                    <small>
+                        Customers returning in August
+                    </small>
+
+                </div>
+
+
+                <!-- CHURNED -->
+
+                <div class="customer-card churned">
+
+                    <span class="customer-label">
+                        Churned
+                    </span>
+
+                    <strong id="churnedCustomers">
+                        0
+                    </strong>
+
+                    <small>
+                        Customers lost from July
+                    </small>
+
+                </div>
+
+
+                <!-- NEW / RETURNING -->
+
+                <div class="customer-card new-customers">
+
+                    <span class="customer-label">
+                        New / Returning
+                    </span>
+
+                    <strong id="newCustomers">
+                        0
+                    </strong>
+
+                    <small>
+                        Customers entering August
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CUSTOMER REVENUE IMPACT
+             ===================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        CUSTOMER IMPACT
+                    </p>
+
+                    <h2>
+                        Revenue Impact
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="impact-grid">
+
+                <!-- CHURN IMPACT -->
+
+                <div class="impact-card negative">
+
+                    <div>
+
+                        <span>
+                            Churned Customers
+                        </span>
+
+                        <small>
+                            Revenue impact
+                        </small>
+
+                    </div>
+
+
+                    <strong id="churnRevenue">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- NEW / RETURNING IMPACT -->
+
+                <div class="impact-card positive">
+
+                    <div>
+
+                        <span>
+                            New / Returning
+                        </span>
+
+                        <small>
+                            Revenue contribution
+                        </small>
+
+                    </div>
+
+
+                    <strong id="newRevenue">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRODUCT PERFORMANCE
+             ===================================== -->
+
+        <section class="dashboard-section" id="products">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        PRODUCT ANALYTICS
+                    </p>
+
+                    <h2>
+                        Product Performance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-columns">
+
+                <!-- DECLINING PRODUCTS -->
+
+                <div class="product-panel">
+
+                    <div class="panel-header decline-header">
+
+                        <span>
+                            ↓
+                        </span>
+
+
+                        <div>
+
+                            <h3>
+                                Top Decliners
+                            </h3>
+
+                            <small>
+                                Largest revenue decreases
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="decliningProducts">
+
+                        <p class="loading">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GROWING PRODUCTS -->
+
+                <div class="product-panel">
+
+                    <div class="panel-header growth-header">
+
+                        <span>
+                            ↑
+                        </span>
+
+
+                        <div>
+
+                            <h3>
+                                Top Growth
+                            </h3>
+
+                            <small>
+                                Largest revenue increases
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="growingProducts">
+
+                        <p class="loading">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             CATEGORY PERFORMANCE
+             ===================================== -->
+
+        <section class="dashboard-section" id="categories">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        CATEGORY ANALYTICS
+                    </p>
+
+                    <h2>
+                        Category Performance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="categoryList" class="category-list">
+
+                <p class="loading">
+                    Loading category data...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ROOT CAUSE / INSIGHTS
+             ===================================== -->
+
+        <section class="dashboard-section" id="insights">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        BUSINESS INSIGHTS
+                    </p>
+
+                    <h2>
+                        Root Cause Analysis
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <div class="insight-icon">
+                    ✦
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Understanding the revenue movement
+                    </h3>
+
+
+                    <p id="rootCauseSummary">
+                        Loading business insights...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+             ===================================== -->
+
+        <footer class="footer">
+
+            <span>
+                Business Memory · Business Intelligence Platform
+            </span>
+
+            <span>
+                Data Analytics Project · 2026
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

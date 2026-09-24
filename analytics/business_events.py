@@ -149,4 +149,4 @@ else:
             f"Revenue    : ₹{event['previous_revenue']:,.2f}"
             f" → ₹{event['current_revenue']:,.2f}"
         )
-        print("----------------------")
+        print("----------------------") 
