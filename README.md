@@ -254,13 +254,15 @@ These insights demonstrate how business analytics can support performance monito
 
 ## Future Enhancements
 
-- Automated testing and API test coverage.
-- Expanded data quality validation.
-- Database integration and persistence.
-- Interactive date-range filters.
-- Advanced customer behavior analytics.
-- Deployment and cloud hosting.
-- Automated reporting and business alerts.
+- Automated testing and API test coverage
+- Expanded data quality validation
+- Database integration and persistence
+- Interactive date-range filters
+- Advanced customer behavior analytics
+- Deployment and cloud hosting
+- Automated reporting and business alerts
+
+---
 
 ## Author
 
