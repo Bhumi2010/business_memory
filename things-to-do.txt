@@ -1,0 +1,14 @@
+remind me this ----- add a login page to this project, also add continue with google on login page, landing page on first login should show demanding for users data that to be analyzed, when user just login only empty boxes of the ui should be shown just like most of the website iff user wanna yk just roam around and see how application looks , my website should be able to handle data load ,
+
+as i am dealing with all kind of data there should be privacy which ensure users data safe here 
+
+---- for this i need to find best encryption or bit encoder that should sit on database which prevents data leak or in anycase it got hacked but hacker cant find real data (or any approach that is resource saving plus cost efficient when i need to deploy this on server)
+
+
+
+one more major thing is that either we should have maximum expected fields(attributes in data base) that could be possible in business realted data or our system should show our expected fields that yours data should have if he doesn't have the required fields then those fields either be removed (neglect)from the analytical pipeline and show proper insights 
+
+or ---- our system should ask user that what are the fields that his/her data have which make our system really personalize for that particular user 
+
+
+

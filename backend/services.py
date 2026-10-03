@@ -616,9 +616,9 @@ def get_customer_segments():
                 not high_value
                 and high_frequency
             ):
-                return "Regular Active"
+                return "Loyal"
 
-            return "Loyal"
+            return "Regular Active"
 
         return "No Activity"
 
